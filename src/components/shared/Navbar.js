@@ -8,9 +8,11 @@ import Button from "@mui/material/Button";
 import logo from "@/assets/logo.png";
 import Image from "next/image";
 import { IconButton, Stack } from "@mui/material";
+import Link from "next/link";
 // icons
 import FacebookIcon from "@mui/icons-material/Facebook";
-import Link from "next/link";
+import TwitterIcon from '@mui/icons-material/Twitter';
+import InstagramIcon from '@mui/icons-material/Instagram';
 
 const navLinks = [
   {
@@ -41,14 +43,14 @@ const navLinks = [
 
 const Navbar = () => {
   return (
-    <AppBar position="static">
+    <AppBar position="static" sx={{backgroundColor: '#011321'}}>
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           <Image src={logo} width={100} height={100} alt="logo" />
           <Box className="w-full text-center">
             {navLinks.map((item) => (
               <Link key={item} href={item.path}>
-                <Button className="text-white">{item.route}</Button>
+                <Button sx={{color: 'white'}}>{item.route}</Button>
               </Link>
             ))}
           </Box>
@@ -62,10 +64,10 @@ const Navbar = () => {
                 <FacebookIcon />
               </IconButton>
               <IconButton>
-                <FacebookIcon />
+                <TwitterIcon />
               </IconButton>
               <IconButton>
-                <FacebookIcon />
+                <InstagramIcon />
               </IconButton>
             </Stack>
           </Box>
